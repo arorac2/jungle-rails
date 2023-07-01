@@ -1,0 +1,10 @@
+<h1>Admin::Categories#index</h1>
+<% if @categories.any? %>
+  <ul>
+    <% @categories.each do |category| %>
+      <li><%= category.name %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No categories found.</p>
+<% end %>
