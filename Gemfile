@@ -70,6 +70,12 @@ group :development do
   
 end
 
+group :development, :test do
+  gem 'rspec-rails', '~> 5.1'
+  gem 'net-smtp', require: false
+  # ...
+end
+
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 3.26'

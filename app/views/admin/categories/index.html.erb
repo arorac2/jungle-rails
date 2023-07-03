@@ -1,8 +1,25 @@
 <h1>Admin::Categories#index</h1>
+<% if flash[:notice] %>
+  <h2>Category Created!</h2>
+  <p><%= flash[:notice] %></p>
+<% elsif flash[:error] %>
+  <h2>Category Creation Failed!</h2>
+  <% if flash[:error] == 'Category name cannot be blank' %>
+    <p>Please enter a category name.</p>
+  <% elsif flash[:error] == 'Category name already exists' %>
+    <p>Category with this name already exists.</p>
+  <% else %>
+    <p>An error occurred while creating the category.</p>
+  <% end %>
+<% end %>
+
 <% if @categories.any? %>
   <ul>
     <% @categories.each do |category| %>
-      <li><%= category.name %></li>
+      <li>
+        <%= category.name %>
+        <%= button_to 'Delete', category_path(category), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' , method: :delete%>
+      </li>
     <% end %>
   </ul>
 <% else %>
