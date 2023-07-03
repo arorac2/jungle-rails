@@ -56,6 +56,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'dotenv-rails'
 gem 'rspec-rails'
+gem 'net-smtp', require: false
 end
 
 group :development do
@@ -70,11 +71,6 @@ group :development do
   
 end
 
-group :development, :test do
-  gem 'rspec-rails', '~> 5.1'
-  gem 'net-smtp', require: false
-  # ...
-end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
