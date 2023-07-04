@@ -63,10 +63,10 @@
         </li>
         <li class="nav-item end-0">
           <%= link_to cart_path, class: "nav-link " do %> <%= fa_icon "shopping-cart" %>
-            <li><%= link_to 'Sign Up', signup_path %></li>
-<li><%= link_to 'Log In', login_path %></li>
           My Cart (<%= cart.size %>) <% end %>
         </li>
+            <li><%= link_to 'Sign Up', signup_path %></li>
+            <li><%= link_to 'Log In', login_path %></li>
       </ul>
     </div>
   </div>
