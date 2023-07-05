@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+    # helps authenticate use3r when logging in 
+    
     has_secure_password
   
     validates :first_name, presence: true

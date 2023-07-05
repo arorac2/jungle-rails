@@ -1,5 +1,4 @@
 class Admin::ProductsController < ApplicationController
-
   http_basic_authenticate_with name: "Jungle", password: "book"
 
   def index
@@ -12,7 +11,6 @@ class Admin::ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-
     if @product.save
       redirect_to [:admin, :products], notice: 'Product created!'
     else

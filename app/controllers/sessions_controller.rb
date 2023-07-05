@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+    # Handles account login
     def new
     end
     helper_method :current_user
@@ -6,7 +7,11 @@ class SessionsController < ApplicationController
     def create
         user = User.authenticate_with_credentials(params[:session][:email], params[:session][:password])
         if user
-          log_in user
+        #   log_in user
+          cookies[:email] = {
+            :value => user.email,
+            :expires => 1.year.from_now
+          }
           redirect_to root_path, notice: 'Logged in successfully!'
         else
           flash.now[:alert] = 'Invalid email or password'
@@ -15,7 +20,8 @@ class SessionsController < ApplicationController
       end
     
       def destroy
-        log_out
+        # log_out
+        cookies.delete(:email)
         redirect_to root_path, notice: 'Logged out successfully!'
       end
     end
