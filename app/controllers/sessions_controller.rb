@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
     def new
     end
     helper_method :current_user
+   
 
     def create
         user = User.authenticate_with_credentials(params[:session][:email], params[:session][:password])
@@ -22,6 +23,7 @@ class SessionsController < ApplicationController
       def destroy
         # log_out
         cookies.delete(:email)
+        # redirect_back(fallback_location: root_path)
         redirect_to root_path, notice: 'Logged out successfully!'
       end
     end

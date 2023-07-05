@@ -60,7 +60,7 @@
             <li><%= link_to 'Add New Category', new_admin_category_path, class: "nav-link" %></li>
           </ul>
         </li>
-       <% if user %>
+       <% if (cookies[:email])  %>
   <li class="nav-item end-0">
     <%= link_to cart_path, class: "nav-link" do %>
       <%= fa_icon "shopping-cart" %>
@@ -68,7 +68,7 @@
     <% end %>
   </li>
   <li><%= cookies[:email] %></li>
-  <li><%= link_to 'Log Out', logout_path %></li>
+  <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
 <% else %>
   <li><%= link_to 'Sign Up', signup_path %></li>
   <li><%= link_to 'Log In', login_path %></li>
