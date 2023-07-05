@@ -111,3 +111,30 @@ form.button_to {
 .text-danger {
   color: #f38792 !important;
 }
+
+.logout-btn a {
+  color: white;
+  position: absolute;
+  right: 7px;
+  margin-top: 8px;
+ 
+}
+
+.signup-btn a{
+  color:white;
+  display: flex;
+  position: absolute;
+  margin-top: 8px;
+  right:75px;
+}
+
+.login-btn a{
+  color:white;
+  display: flex;
+  right: 10px;
+position: absolute;
+margin-top: 8px;}
+
+.category-delete{
+  display: table-row;
+}

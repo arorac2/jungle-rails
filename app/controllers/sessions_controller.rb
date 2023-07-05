@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
             :value => user.email,
             :expires => 1.year.from_now
           }
-          redirect_to root_path, notice: 'Logged in successfully!'
+          redirect_to root_path
         else
           flash.now[:alert] = 'Invalid email or password'
           render 'new'
@@ -24,6 +24,6 @@ class SessionsController < ApplicationController
         # log_out
         cookies.delete(:email)
         # redirect_back(fallback_location: root_path)
-        redirect_to root_path, notice: 'Logged out successfully!'
+        redirect_to root_path
       end
     end

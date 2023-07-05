@@ -1,4 +1,4 @@
-<h1>Admin::Categories#index</h1>
+<h1>Admin:Categories</h1>
 <% if flash[:notice] %>
   <h2>Category Created!</h2>
   <p><%= flash[:notice] %></p>
@@ -16,7 +16,7 @@
 <% if @categories.any? %>
   <ul>
     <% @categories.each do |category| %>
-      <li>
+      <li class='category-delete'>
         <%= category.name %>
         <%= button_to 'Delete', category_path(category), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' , method: :delete%>
       </li>
